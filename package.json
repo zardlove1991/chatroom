@@ -1,0 +1,40 @@
+{
+  "name": "vite2_vue2",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint --fix --ext .js --ext .jsx --ext .vue src/"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.16.11",
+    "@vitejs/plugin-legacy": "^1.7.1",
+    "@vue/composition-api": "^1.4.9",
+    "@vueuse/core": "^8.2.0",
+    "animejs": "^3.2.1",
+    "babel-eslint": "^10.1.0",
+    "babel-plugin-component": "^1.1.1",
+    "element-theme-chalk": "^2.15.6",
+    "eslint": "^6.8.0",
+    "eslint-plugin-vue": "^7.0.0-beta.4",
+    "nprogress": "^0.2.0",
+    "sass": "^1.26.5",
+    "sass-loader": "^8.0.2",
+    "svg-sprite-loader": "^6.0.11",
+    "vite": "^2.9.6",
+    "vite-babel-plugin": "^0.0.2",
+    "vite-plugin-vue-inspector": "^0.5.3",
+    "jsonwebtoken": "^8.5.1"
+  },
+  "dependencies": {
+    "axios": "^0.21.1",
+    "element-ui": "^2.15.6",
+    "vite-plugin-vue2": "^1.9.0",
+    "vue": "^2.6.14",
+    "vue-router": "^3.5.3",
+    "vue-styled-components": "^1.6.0",
+    "vue-template-compiler": "^2.6.14",
+    "vuex": "^3.6.2"
+  }
+}

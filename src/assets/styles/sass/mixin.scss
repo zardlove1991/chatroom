@@ -1,0 +1,52 @@
+// 默认侧边样式
+@mixin defaultContainer($bg, $height:1200px) {
+    height: $height;
+    background: $bg;
+    border-top-right-radius: 15px;
+    padding: 45px 0;
+    flex: 1;
+    width: 81%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04);
+}
+// 基础按钮样式 
+@mixin defaultButton($width:unset, $height:32px, $br: 4px) {
+  width: $width;
+  min-width: 72px;
+  height: $height;
+  border-radius: $br;
+  font-size: 14px;
+  line-height: 9px;
+}
+// 多行省略号
+@mixin line-overflow( $line ){
+    display:-webkit-box;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    -webkit-line-clamp:$line;
+    -webkit-box-orient:vertical;
+}
+// 文本省略号
+@mixin txt-overflow($width) {
+  max-width:$width;
+  white-space:nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+// 设置渐变背景色
+@mixin setGradient($deg, $col1, $col2) {
+  background: linear-gradient($deg,$col1, $col2);
+}
+@mixin audit-color($status) {
+  @if $status == 0 
+  {
+    background-color: $unReviewed-color
+  }
+  @if $status == 1 
+  {
+    background-color: $review-color
+  }
+  @if $status == 2 
+  {
+    background-color: $reject-color
+  }
+}
