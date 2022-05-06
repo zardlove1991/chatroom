@@ -7,6 +7,8 @@ VueRouter.prototype.push = function push(location) {
 };
 import NProgress from 'nprogress';
 import 'nprogress/nprogress.css';
+import jwt from 'jsonwebtoken';
+import { getItem } from '@/utils/storage'
 // 注册路由插件
 Vue.use(VueRouter);
 const routes = [
@@ -30,10 +32,18 @@ const router = new VueRouter({
 router.beforeEach(async(to, from, next) => {
     // start progress bar
     NProgress.start();
-    next();
-    setTimeout(() => {
-        NProgress.done();
-    });
+    const token = getItem('access_token')
+    console.log(jwt)
+    // const isValid = jwt.verify(token, 'zard1991',(err,data) => data)
+    if(to.path !='/Home' && !isValid) {
+        this.$message({
+          message: '登陆过期,请重新登录',
+          type: 'error'
+        });
+        next('/Home')
+    } else {
+        next()
+    }
 });
 router.afterEach(() => {
     // finish progress bar

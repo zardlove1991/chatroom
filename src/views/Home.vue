@@ -234,6 +234,7 @@
   </el-container>
 </template>
 <script>
+import { setItem } from '@/utils/storage'
 export default {
   data () {
     return {
@@ -331,6 +332,7 @@ export default {
                     type: 'success',
                     message: res.message
                 })
+                setItem('access_token', res.access_token);
             }
         })
       },

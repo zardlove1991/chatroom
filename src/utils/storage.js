@@ -1,6 +1,6 @@
 let namespace = 'chatroom';
 
-export function saveItem(key, value) {
+export function setItem(key, value) {
     let storage = window.localStorage.getItem(namespace)
     if(!storage) {
         storage = {};
@@ -11,7 +11,7 @@ export function saveItem(key, value) {
     window.localStorage.setItem(namespace, JSON.stringify(storage))
 }
 
-export function loadItem(key, def) {
+export function getItem(key, def) {
     let storage = window.localStorage.getItem(namespace)
     if(!storage) {
         return def
