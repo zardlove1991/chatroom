@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>icon</title>
+    <g id="会员管理系统" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="A1-管理系统入口" transform="translate(-515.000000, -481.000000)" stroke="#FFFFFF" stroke-width="1.4">
+            <g id="1" transform="translate(390.000000, 279.000000)">
+                <g id="按钮" transform="translate(60.000000, 186.000000)">
+                    <g id="编组" transform="translate(65.000000, 16.000000)">
+                        <g id="icon" transform="translate(1.000000, 1.000000)">
+                            <ellipse id="椭圆形" cx="6.49725879" cy="4.65904034" rx="4.59112144" ry="4.65904034"></ellipse>
+                            <path d="M7.99236058e-13,13.9841441 C0.943438662,11.266137 3.49616867,9.31808067 6.49725879,9.31808067 C9.50418147,9.31808067 12.0609996,11.2737164 13,14" id="路径" stroke-linecap="round"></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

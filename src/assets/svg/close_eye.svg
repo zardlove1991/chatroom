@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>icon</title>
+    <g id="会员系统" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round">
+        <g id="C2-1-会员注册" transform="translate(-1394.000000, -558.000000)" stroke-width="1.1">
+            <g id="内容" transform="translate(1030.000000, 274.000000)">
+                <g id="输入框" transform="translate(0.000000, 132.000000)">
+                    <g id="隐藏" transform="translate(364.000000, 152.000000)">
+                        <g id="icon-隐藏" transform="translate(1.200000, 4.500000)">
+                            <line x1="6.74398063" y1="3.6020576" x2="6.74398063" y2="6.86035838" id="路径-4" stroke="#979797"></line>
+                            <line x1="12.3629992" y1="2.87378612" x2="10.5409777" y2="5.60217967" id="路径-4" stroke="#979797" transform="translate(11.451988, 4.237983) scale(-1, 1) translate(-11.451988, -4.237983) "></line>
+                            <line x1="2.83626579" y1="2.87378612" x2="1.01046012" y2="5.60217967" id="路径-4" stroke="#979797"></line>
+                            <path d="M9.09494702e-13,-1.42108547e-14 C1.55384876,2.02209839 3.99670809,3.32544627 6.74398063,3.32544627 C9.44223395,3.32544627 11.8468404,2.06819437 13.4039401,0.107550288" id="路径" stroke="#999999"></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

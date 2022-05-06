@@ -110,7 +110,7 @@
           <!-- 账号登录 -->
           <div v-show="login.type == 'account'">
             <el-input
-              v-model="login.account.user"
+              v-model="login.account.username"
               placeholder="用户名邮箱"
             />
             <Flex>
@@ -255,7 +255,7 @@ export default {
             code: ''
           },
           account: {
-            user: '',
+            username: '',
             password: '',
           },
           remember: false,
@@ -309,20 +309,30 @@ export default {
         console.log(data);
         console.log(this.$minApi.register);
         this.$minApi.register(data).then((res) => {
-          console.log(data);
+            if(!res.ErrorCode) {
+                this.$message({
+                    type: 'success',
+                    message: res.message
+                })
+                goLink('login')
+                this.login.account.username = this.register.mobile;
+                this.login.account.username = this.register.password;
+            }
         })
-        // this.$http('member/signIn')
-        //   ({data: data}).then((data) => {
-        //     this.$message({
-        //       type: 'success',
-        //       message: '注册成功，请登录'
-        //     })
-        //    this.phoneCodeBtnValue = '获取验证码';
-        //    this.login.type = 'account';
-        //    this.goLink('login')
-        //    this.login.mobile.tel = this.register.mobile;
-        //    this.login.account.user = this.register.mobile;
-        // });
+      },
+      startLogin() {
+        const data = {
+            username: this.login.account.username,
+            password:  this.login.account.password
+        }
+        this.$minApi.login(data).then((res) => {
+            if(!res.ErrorCode) {
+                this.$message({
+                    type: 'success',
+                    message: res.message
+                })
+            }
+        })
       },
       modifyPassword() {
 

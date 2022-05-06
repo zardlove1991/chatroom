@@ -15,8 +15,16 @@ router.post('/register', async(req, res, next) => {
     username:req.body.username,
     password:req.body.password
   }
-  console.log(typeof data.password);
   console.log(data)
+  const user = await AdminUser.findOne({ "username": data.username }).select("+password")
+  if (user) {
+    res.send({
+        "ErrorCode": 10000,
+        "message": '用户已注册',
+    })
+    return
+  }
+  console.log(user);
   await AdminUser.create(data)
   res.send({
     "ErrorCode":0,

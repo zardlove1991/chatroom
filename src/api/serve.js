@@ -21,11 +21,12 @@ instance.interceptors.request.use(
   // http response 拦截器
   instance.interceptors.response.use(
     response => {
+      console.log(response)
       //拦截响应，做统一处理 
-      let { error_code, error_message } = response.data;
-      if (error_code != 0 && error_message) {
+      let { ErrorCode, message } = response.data;
+      if (ErrorCode != 0 && message) {
         Message({
-          message: error_message,
+          message: message,
           type: 'error',
           duration: 1000
         });
