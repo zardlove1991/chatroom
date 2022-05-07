@@ -73,5 +73,8 @@ export default ({ mode }) => defineConfig({
         },
       },
     },
-    plugins: Zard()
+    plugins: Zard(),
+    define: {
+        'process.env': {},
+    }
   });

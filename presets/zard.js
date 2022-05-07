@@ -2,6 +2,7 @@ import { createVuePlugin } from 'vite-plugin-vue2';
 import Inspector from "vite-plugin-vue-inspector";
 import { svgBuilder } from '../src/plugin/svgBuilder'; 
 import legacy from "@vitejs/plugin-legacy";
+import requireTransform from 'vite-plugin-require-transform';
 import path from 'path';
 export default () => {
 	return [
@@ -9,6 +10,9 @@ export default () => {
 		createVuePlugin(),
         Inspector({
             vue: 2,
+        }),
+        requireTransform({
+            fileRegex: /.js$|.jsx$|.vue$/,
         }),
 		legacy({
 			targets:['chrome 52'],  // 需要兼容的目标列表，可以设置多个
