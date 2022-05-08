@@ -22,7 +22,6 @@
     "sass": "^1.26.5",
     "sass-loader": "^8.0.2",
     "svg-sprite-loader": "^6.0.11",
-    "util": "^0.12.4",
     "vite": "^2.9.6",
     "vite-babel-plugin": "^0.0.2",
     "vite-plugin-require-transform": "^1.0.3",
@@ -31,9 +30,7 @@
   "dependencies": {
     "axios": "^0.21.1",
     "element-ui": "^2.15.6",
-    "events": "^3.3.0",
-    "jsonwebtoken": "^8.5.1",
-    "jwt-decode": "^3.1.2",
+    "lemon-imui": "^1.7.4",
     "vite-plugin-vue2": "^1.9.0",
     "vue": "^2.6.14",
     "vue-router": "^3.5.3",

@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { Message } from 'element-ui';
+import { getItem } from '@/utils/storage'
 const instance = axios.create({
     baseURL: '//localhost' + '/api',
     timeout: 3000,
@@ -9,6 +10,7 @@ const instance = axios.create({
 // 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
 instance.interceptors.request.use(
     config => {
+        getItem('access_token') && (config.headers.Authorization = getItem('access_token'));
         config.headers = Object.assign({
             'Accept': 'application/json',
             'Content-Type': 'application/json; charset=UTF-8',

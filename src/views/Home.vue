@@ -333,6 +333,10 @@ export default {
                     message: res.message
                 })
                 setItem('access_token', res.access_token);
+                setItem('userInfo', res.userInfo);
+                this.$router.push({
+                  name: 'Chat'
+                })
             }
         })
       },

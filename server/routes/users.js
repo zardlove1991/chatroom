@@ -79,7 +79,11 @@ router.post('/login', async(req, res, next) => {
     res.send({
       "ErrorCode":0,
       "message": '登录成功',
-      "access_token": token
+      "access_token": token,
+      "userInfo": {
+        id: user._id,
+        username: req.body.username,
+      }
     })
     console.log(token)
     
@@ -142,6 +146,17 @@ router.post('/login', async(req, res, next) => {
     //     })
     // })
 });
+// 获取会员列表接口
+router.get('/list', async(req, res, next) => {
+  console.log('list')
+  let page = req.query.page || 1
+  let pageSize = req.query.pageSize || 10
+  const list = await AdminUser.find({}).skip((page -1) * +pageSize).limit(+pageSize);
+  res.send({
+    list,
+    total: list.length
+  })
+})
 // 退出登录
 router.get('/loginOut',function(req,res,next) {
   console.log(req.session.username )

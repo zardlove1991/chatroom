@@ -10,6 +10,7 @@ var userRouter = require('./routes/users');
 var articleRouter = require('./routes/article');
 var session = require('express-session');
 
+const Socket = require("ws");
 var app = express();
 
 //设置跨域访问
@@ -55,8 +56,8 @@ app.use(session({
     console.log(token, isValid, '12312')
     if(!isValid){
       res.send ({
-        "ErrorCode":1,
-        "ErrorText": '登录过期',
+        "ErrorCode": 401,
+        "ErrorText": 'token过期',
       })
     } else {
       next()
@@ -89,5 +90,35 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
+;((Socket) => {
+  const server = new Socket.Server({port : 8080 })
+  const init = () =>{
+      bindEvent();
+  }
+  function bindEvent() {
+      server.on('open', handleOpen);
+      server.on('close', handleClose);
+      server.on('error', handleError);
+      server.on('connection', handleConnection)
+  }
+  function handleOpen () {
+      console.log('webSocket opened')
+  }
+  function handleClose() {
+      console.log('webSocket closed')
+  }
+  function handleError() {
+      console.log('webSocket error')
+  }
+  function handleConnection(ws) {
+      console.log('webSocket connected')
+      ws.on('message', handleMessage)
+  }
+  function handleMessage(msg) {
+
+  }
+  init()
+})(Socket)
 
 module.exports = app;

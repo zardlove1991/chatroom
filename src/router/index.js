@@ -7,9 +7,6 @@ VueRouter.prototype.push = function push(location) {
 };
 import NProgress from 'nprogress';
 import 'nprogress/nprogress.css';
-// import jwt from 'jsonwebtoken';
-const jwtdecode = require("jwt-decode")
-// const jwt = require("jsonwebtoken");
 import { getItem } from '@/utils/storage'
 // 注册路由插件
 Vue.use(VueRouter);
@@ -23,6 +20,11 @@ const routes = [
         name:'Home',
         component: () => import('../views/Home.vue'),
     },
+    {
+        path: '/Chat',
+        name: 'Chat',
+        component: () => import('../views/Chat.vue')
+    }
 ];
 console.log(routes);
 const router = new VueRouter({
@@ -35,16 +37,10 @@ router.beforeEach(async(to, from, next) => {
     // start progress bar
     NProgress.start();
     const token = getItem('access_token')
-    console.log(token)
-    // console.log(jwt)
-    console.log(jwtdecode(token))
-    // const isValid = jwt.verify(token, 'zard1991',(err,data) => data)
-    if(to.path !='/Home' && !isValid) {
-        this.$message({
-          message: '登陆过期,请重新登录',
-          type: 'error'
-        });
-        next('/Home')
+    console.log(to.path)
+    if(to.path !='/Home' && !token) {
+        next('/')
+        NProgress.done();
     } else {
         next()
     }

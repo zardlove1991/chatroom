@@ -6,6 +6,7 @@ import '@/config/element.config';
 import { http } from '@/plugin/http';
 import request from '@/api';
 import openModal  from './utils/Dialog';
+import LemonIMUI from 'lemon-imui'
 Vue.prototype.$openModal = openModal;
 // 引入全局组件
 const modules = import.meta.glob("/src/components/global/**");
@@ -17,6 +18,7 @@ Object.keys(modules).forEach((key) => {
 });
 console.log(12312)
 Vue.use(http);
+Vue.use(LemonIMUI)
 new Vue({
     router,
     store,

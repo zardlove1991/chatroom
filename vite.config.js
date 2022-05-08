@@ -70,11 +70,11 @@ export default ({ mode }) => defineConfig({
           secure: false, // 如果是https接口，需要配置这个参数
           // ws: true, //websocket支持
           rewrite: (path) => path.replace(/^\/api/, ""),
-        },
+        }
       },
     },
     plugins: Zard(),
-    define: {
-        'process.env': {},
-    }
+    // define: {
+    //     'process.env': {},
+    // }
   });
