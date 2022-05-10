@@ -315,9 +315,9 @@ export default {
                     type: 'success',
                     message: res.message
                 })
-                goLink('login')
+                this.goLink('login')
                 this.login.account.username = this.register.mobile;
-                this.login.account.username = this.register.password;
+                this.login.account.password = this.register.password;
             }
         })
       },

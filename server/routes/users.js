@@ -66,12 +66,15 @@ router.post('/register', async(req, res, next) => {
 router.post('/login', async(req, res, next) => {
     const { username, password } = req.body;
     const user = await AdminUser.findOne({ username }).select("+password")
-    console.log(user)
-    assert(user,422,"用户不存在")
-    console.log(assert)
+    if(!user) {
+        res.send({ "ErrorCode": 422, "message": '用户不存在'});
+        return;
+    }
     const isValid = require("bcrypt").compareSync(password, user.password);
-    console.log(isValid)
-    assert(isValid, 422, "密码错误");
+    if(!isValid) {
+        res.send({ "ErrorCode": 422, "message": '密码错误'});
+        return;
+    }
     // 3.返回token，使用user._id和预先定义的字符串生成token
     const token = jwt.sign({ id: user._id }, 'zard1991',{ expiresIn: 60 * 60 * 24 });
     // 服务端向客户端写入cookie

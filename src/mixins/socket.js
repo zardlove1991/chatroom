@@ -26,8 +26,8 @@ export const Socket = {
       handleError(e) {
         console.log('WebSocket error', e)
       },
-      handleMessage(e) {
-
+      handleMessage(e, data) {
+        
       }
     }
   };

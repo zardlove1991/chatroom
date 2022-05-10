@@ -1,6 +1,6 @@
 <template>
 <div>
-    <lemon-imui ref="IMUI" :user="this.user" class="chat"/>
+    <lemon-imui ref="IMUI" :user="this.user" class="chat" @send="send"/>
 </div>
 </template>
 
@@ -56,6 +56,10 @@ export default {
                     }
                 })
             })
+        },
+        send(content) {
+            console.log(content);
+            this.ws.send(content);
         }
     }
 }

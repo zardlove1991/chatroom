@@ -13,6 +13,7 @@ specifiers:
   element-ui: ^2.15.6
   eslint: ^6.8.0
   eslint-plugin-vue: ^7.0.0-beta.4
+  lemon-imui: ^1.7.4
   nprogress: ^0.2.0
   sass: ^1.26.5
   sass-loader: ^8.0.2
@@ -23,7 +24,6 @@ specifiers:
   vite-plugin-vue-inspector: ^0.5.3
   vite-plugin-vue2: ^1.9.0
   vue: ^2.6.14
-  vue-mchat: ^1.2.0
   vue-router: ^3.5.3
   vue-styled-components: ^1.6.0
   vue-template-compiler: ^2.6.14
@@ -32,9 +32,9 @@ specifiers:
 dependencies:
   axios: 0.21.4
   element-ui: 2.15.6_vue@2.6.14
+  lemon-imui: 1.7.4_vue@2.6.14
   vite-plugin-vue2: 1.9.3_165aafa833f4b3ffc38894e27e52a497
   vue: 2.6.14
-  vue-mchat: 1.2.0
   vue-router: 3.5.3
   vue-styled-components: 1.6.0
   vue-template-compiler: 2.6.14
@@ -4198,11 +4198,6 @@ packages:
       builtin-modules: 1.1.1
     dev: true
 
-  /iscroll/5.2.0:
-    resolution: {integrity: sha1-1RMwcIi1slpPiTr0dIBEaEgYKcg=}
-    deprecated: deprecated
-    dev: false
-
   /isexe/2.0.0:
     resolution: {integrity: sha1-6PvzdNxVb/iUehDcsFctYz8s+hA=}
     dev: true
@@ -4415,6 +4410,14 @@ packages:
     transitivePeerDependencies:
       - supports-color
     dev: true
+
+  /lemon-imui/1.7.4_vue@2.6.14:
+    resolution: {integrity: sha512-92keTVO2j5nIuroN9FxcRkcKgK3YhrwwOKKg5kIftrexT7FXkH1vZ1t1ydk7pbA/jJd6MgAQsLnYMCzFUMRRig==}
+    peerDependencies:
+      vue: ^2.6.10
+    dependencies:
+      vue: 2.6.14
+    dev: false
 
   /levn/0.3.0:
     resolution: {integrity: sha1-OwmSTt+fCDwEkP3UwLxEIeBHZO4=}
@@ -6110,13 +6113,6 @@ packages:
     transitivePeerDependencies:
       - supports-color
     dev: true
-
-  /vue-mchat/1.2.0:
-    resolution: {integrity: sha512-jU2x533hpMItaQGenu3fGiMvLU0XGarw5Isw/alM77lUc/iufFUAJyKa4SimHH4pkaSdRR0fCsjcLkguNi8dkw==}
-    dependencies:
-      iscroll: 5.2.0
-      vue: 2.6.14
-    dev: false
 
   /vue-router/3.5.3:
     resolution: {integrity: sha512-FUlILrW3DGitS2h+Xaw8aRNvGTwtuaxrRkNSHWTizOfLUie7wuYwezeZ50iflRn8YPV5kxmU2LQuu3nM/b3Zsg==}
