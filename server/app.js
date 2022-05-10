@@ -116,7 +116,10 @@ app.use(function(err, req, res, next) {
       ws.on('message', handleMessage)
   }
   function handleMessage(msg) {
-
+    msg = msg.toString('utf-8')
+    server.clients.forEach((c) => {
+      c.send(msg)
+    })
   }
   init()
 })(Socket)

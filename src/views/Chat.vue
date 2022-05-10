@@ -57,9 +57,10 @@ export default {
                 })
             })
         },
-        send(content) {
+        send(content, next, file) {
             console.log(content);
-            this.ws.send(content);
+            this.ws.send(JSON.stringify(content));
+            next({status:'succeed'});
         }
     }
 }
